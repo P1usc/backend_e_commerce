@@ -1,0 +1,64 @@
+{
+  "kind": "collectionType",
+  "collectionName": "clienti",
+  "info": {
+    "singularName": "cliente",
+    "pluralName": "clienti",
+    "displayName": "Cliente",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string"
+    },
+    "cognome": {
+      "type": "string"
+    },
+    "indirizzo": {
+      "type": "string"
+    },
+    "telefono": {
+      "type": "biginteger"
+    },
+    "imgprofile": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "cartes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::carta.carta",
+      "mappedBy": "cliente"
+    },
+    "account": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::account.account",
+      "mappedBy": "cliente",
+      "onDelete": "cascade"
+    },
+    "carrello": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::carrello.carrello",
+      "inversedBy": "cliente"
+    },
+    "preferiti": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::preferito.preferito",
+      "mappedBy": "cliente"
+    }
+  }
+}

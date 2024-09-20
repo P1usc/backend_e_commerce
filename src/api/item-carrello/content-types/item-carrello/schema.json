@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "item_carrelli",
+  "info": {
+    "singularName": "item-carrello",
+    "pluralName": "item-carrelli",
+    "displayName": "ItemCarrello"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "quantita": {
+      "type": "integer"
+    },
+    "carrello": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::carrello.carrello",
+      "inversedBy": "item_carrelli"
+    },
+    "prodotto": {  
+      "type": "relation",
+      "relation": "manyToOne",  
+      "target": "api::prodotto.prodotto"
+    }
+  }
+}

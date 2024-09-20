@@ -1,0 +1,115 @@
+{
+  "kind": "collectionType",
+  "collectionName": "prodotti",
+  "info": {
+    "singularName": "prodotto",
+    "pluralName": "prodotti",
+    "displayName": "Prodotto",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "categoria": {
+      "type": "enumeration",
+      "enum": [
+        "Pantalone",
+        "T-shirt",
+        "Felpa",
+        "Camicia",
+        "Accessorio"
+      ],
+      "required": true
+    },
+    "nome": {
+      "type": "string",
+      "required": true
+    },
+    "costo": {
+      "type": "float",
+      "required": true
+    },
+    "shortdescrizione": {
+      "type": "text"
+    },
+    "longdescrizione": {
+      "type": "text"
+    },
+    "lunghezza": {
+      "type": "enumeration",
+      "enum": [
+        "Corto",
+        "Lungo",
+        "Tre quarti"
+      ],
+      "required": false
+    },
+    "tipo": {
+      "type": "enumeration",
+      "enum": [
+        "Uomo",
+        "Donna",
+        "Accessorio"
+      ],
+      "required": true
+    },
+    "Taglia": {
+      "type": "enumeration",
+      "enum": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "required": false
+    },
+    "Colore": {
+      "type": "enumeration",
+      "enum": [
+        "Verde",
+        "Blu",
+        "Rosso",
+        "Nero",
+        "Bianco",
+        "Marrone",
+        "Viola",
+        "Grigio"
+      ],
+      "required": true
+    },
+    "sconto": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::sconto.sconto",
+      "inversedBy": "prodottos"
+    },
+    "marca": {
+      "type": "string",
+      "required": true
+    },
+    "pngProd": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "quantita": {
+      "type": "integer",
+      "required": true
+    },
+    "preferito": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::preferito.preferito",
+      "inversedBy": "prodotti"
+    }
+  }
+}

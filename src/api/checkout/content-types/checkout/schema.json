@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "checkouts",
+  "info": {
+    "singularName": "checkout",
+    "pluralName": "checkouts",
+    "displayName": "Checkout",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "indirizzo": {
+      "type": "string"
+    },
+    "modalitaPag": {
+      "type": "enumeration",
+      "enum": [
+        "Carta",
+        "Paypal",
+        "Constrassegno"
+      ]
+    },
+    "citta": {
+      "type": "string"
+    },
+    "nominativo": {
+      "type": "string"
+    },
+    "telefono": {
+      "type": "biginteger"
+    },
+    "codicep": {
+      "type": "biginteger"
+    },
+    "provincia": {
+      "type": "string"
+    },
+    "aquistodata": {
+      "type": "date"
+    },
+    "carta": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::carta.carta"
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "carte",
+  "info": {
+    "singularName": "carta",
+    "pluralName": "carte",
+    "displayName": "Carta",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string"
+    },
+    "Circuito": {
+      "type": "enumeration",
+      "enum": [
+        "MasterCard",
+        "Visa",
+        "American Express",
+        "Bancomat"
+      ]
+    },
+    "iban": {
+      "type": "string"
+    },
+    "cvv": {
+      "type": "integer"
+    },
+    "saldo": {
+      "type": "float"
+    },
+    "cliente": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::cliente.cliente",
+      "inversedBy": "cartes"
+    }
+  }
+}

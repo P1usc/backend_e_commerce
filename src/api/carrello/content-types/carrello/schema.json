@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "carrelli",
+  "info": {
+    "singularName": "carrello",
+    "pluralName": "carrelli",
+    "displayName": "Carrello",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "cliente": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::cliente.cliente",
+      "mappedBy": "carrello"
+    },
+    "item_carrelli": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::item-carrello.item-carrello",
+      "mappedBy": "carrello"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sconti",
+  "info": {
+    "singularName": "sconto",
+    "pluralName": "sconti",
+    "displayName": "Sconto",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string"
+    },
+    "descrizione": {
+      "type": "text"
+    },
+    "sconto": {
+      "type": "integer"
+    },
+    "inizio": {
+      "type": "date"
+    },
+    "fine": {
+      "type": "date"
+    },
+    "attiva": {
+      "type": "boolean"
+    },
+    "prodottos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::prodotto.prodotto",
+      "mappedBy": "sconto"
+    }
+  }
+}

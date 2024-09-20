@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "preferiti",
+  "info": {
+    "singularName": "preferito",
+    "pluralName": "preferiti",
+    "displayName": "Preferito",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "cliente": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::cliente.cliente",
+      "inversedBy": "preferiti"
+    },
+    "prodotti": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::prodotto.prodotto",
+      "mappedBy": "preferito"
+    }
+  }
+}
