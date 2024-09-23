@@ -14,7 +14,7 @@ module.exports = {
     {
       method: 'GET',
       path: '/prodotti-per-genere',
-      handler: 'ricercaprod.prodottiPerGenere',
+      handler: 'ricercaprod.prodottiPerTipoECategoria',
       config: {
         policies: [],
         middlewares: [],
