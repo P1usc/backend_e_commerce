@@ -29,7 +29,7 @@
     },
     "costo": {
       "type": "float",
-      "required": true
+      "required": false
     },
     "shortdescrizione": {
       "type": "text"

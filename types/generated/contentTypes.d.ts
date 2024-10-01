@@ -1189,7 +1189,7 @@ export interface ApiProdottoProdotto extends Schema.CollectionType {
     > &
       Attribute.Required;
     nome: Attribute.String & Attribute.Required;
-    costo: Attribute.Float & Attribute.Required;
+    costo: Attribute.Float;
     shortdescrizione: Attribute.Text;
     longdescrizione: Attribute.Text;
     lunghezza: Attribute.Enumeration<['Corto', 'Lungo', 'Tre quarti']>;
